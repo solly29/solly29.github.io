@@ -1,9 +1,12 @@
-# main links
+# main links 상단 메뉴 수정하는곳
 main:
-  - title: "Quick-Start Guide"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-  # - title: "About"
-  #   url: https://mmistakes.github.io/minimal-mistakes/about/
+  # - title: "Quick-Start Guide"
+  #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+  - title: "블로그 방문하기"
+    url: https://solly29.github.io/
+  - title: "About"
+    url: /about/
+    #url을 permalink을 설정한 것으로 해도된다. 위에 처럼
   # - title: "Sample Posts"
   #   url: /year-archive/
   # - title: "Sample Collections"

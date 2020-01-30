@@ -1,6 +1,6 @@
 ---
-title:  "github.io ºí·Î±× ½ÃÀÛÇÏ±â"
-excerpt: "GitHub Blog ¼­ºñ½ºÀÎ github.io ºí·Î±× ½ÃÀÛÇÏ±â·Î Çß´Ù."
+title:  "github.io ë¸”ë¡œê·¸ ì‹œìž‘í•˜ê¸°"
+excerpt: "GitHub Blog ì„œë¹„ìŠ¤ì¸ github.io ë¸”ë¡œê·¸ ì‹œìž‘í•˜ê¸°ë¡œ í–ˆë‹¤."
 
 categories:
   - Blog
@@ -9,12 +9,12 @@ tags:
 last_modified_at: 2019-04-13T08:06:00-05:00
 ---
 
-GitHub Blog ¼­ºñ½ºÀÎ github.io ºí·Î±× ½ÃÀÛÇÏ±â·Î Çß´Ù.
-GitHub Blog ¼­ºñ½ºÀÇ ÀÌ¸§Àº PagesÀÌ´Ù.
+GitHub Blog ì„œë¹„ìŠ¤ì¸ github.io ë¸”ë¡œê·¸ ì‹œìž‘í•˜ê¸°ë¡œ í–ˆë‹¤.
+GitHub Blog ì„œë¹„ìŠ¤ì˜ ì´ë¦„ì€ Pagesì´ë‹¤.
 
-Pages°¡ ´Ù¸¥ ºí·Î±× ÇÃ·§Æû º¸´Ù ÆíÇÑ °Í °°¾Æ¼­ ¸¶À½¿¡ µç´Ù.
-´Ù¸¥ »ç¶÷µéµµ °°ÀÌ ¸¹ÀÌ »ç¿ëÇßÀ¸¸é ÁÁ°Ú´Ù´Â »ý°¢ÀÌ µç´Ù.
+Pagesê°€ ë‹¤ë¥¸ ë¸”ë¡œê·¸ í”Œëž«í¼ ë³´ë‹¤ íŽ¸í•œ ê²ƒ ê°™ì•„ì„œ ë§ˆìŒì— ë“ ë‹¤.
+ë‹¤ë¥¸ ì‚¬ëžŒë“¤ë„ ê°™ì´ ë§Žì´ ì‚¬ìš©í–ˆìœ¼ë©´ ì¢‹ê² ë‹¤ëŠ” ìƒê°ì´ ë“ ë‹¤.
 
-YFM¿¡¼­ Á¤ÀÇÇÑ Á¦¸ñÀ» ÀÌÁß °ýÈ£ ±¸¹®À¸·Î º»¹®¿¡ Ãß°¡ÇÒ ¼ö ÀÖ´Ù.
-ÀÌ ±ÛÀÇ Á¦¸ñÀº {{ page.title }}ÀÌ°í
-¸¶Áö¸·À¸·Î ¼öÁ¤µÈ ½Ã°£Àº {{ page.last_modified_at }}ÀÌ´Ù.
+YFMì—ì„œ ì •ì˜í•œ ì œëª©ì„ ì´ì¤‘ ê´„í˜¸ êµ¬ë¬¸ìœ¼ë¡œ ë³¸ë¬¸ì— ì¶”ê°€í•  ìˆ˜ ìžˆë‹¤.
+ì´ ê¸€ì˜ ì œëª©ì€ {{ page.title }}ì´ê³ 
+ë§ˆì§€ë§‰ìœ¼ë¡œ ìˆ˜ì •ëœ ì‹œê°„ì€ {{ page.last_modified_at }}ì´ë‹¤.

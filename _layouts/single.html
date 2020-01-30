@@ -52,14 +52,6 @@ devinlife comments :
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
 
-		<script src="https://utteranc.es/client.js"
-        repo="solly29/blog-comments"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-<		</script>
-
       <footer class="page__meta">
         {% if site.data.ui-text[site.locale].meta_label %}
           <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
@@ -81,6 +73,14 @@ devinlife comments :
       {% include comments.html %}
     {% endif %}
   </article>
+  
+	<script src="https://utteranc.es/client.js"
+        repo="solly29/blog-comments"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+	</script>
 
   {% comment %}<!-- only show related on a post page when `related: true` -->{% endcomment %}
   {% if page.id and page.related and site.related_posts.size > 0 %}

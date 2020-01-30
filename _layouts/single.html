@@ -67,6 +67,14 @@ devinlife comments :
       {% if page.share %}{% include social-share.html %}{% endif %}
 
       {% include post_pagination.html %}
+	  
+	  <script src="https://utteranc.es/client.js"
+        repo="solly29/blog-comments"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+	</script>
     </div>
 
     {% if jekyll.environment == 'production' and site.comments.provider and page.comments %}
@@ -74,13 +82,6 @@ devinlife comments :
     {% endif %}
   </article>
   
-	<script src="https://utteranc.es/client.js"
-        repo="solly29/blog-comments"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-	</script>
 
   {% comment %}<!-- only show related on a post page when `related: true` -->{% endcomment %}
   {% if page.id and page.related and site.related_posts.size > 0 %}

@@ -4,10 +4,14 @@ main:
   #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   - title: "블로그 방문하기"
     url: https://solly29.github.io/
+  - title: "윤동주"
+    url: /categories/윤동주/
   - title: "About"
     url: /about/
   - title: "Categories"
     url: "/categories/"
+  - title: "Tags"
+    url: "/tags/"
     #url을 permalink을 설정한 것으로 해도된다. 위에 처럼
   # - title: "Sample Posts"
   #   url: /year-archive/

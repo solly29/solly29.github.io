@@ -68,18 +68,18 @@ devinlife comments :
 
       {% include post_pagination.html %}
 	  
-	  <script src="https://utteranc.es/client.js"
-        repo="solly29/blog-comments"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-	</script>
     </div>
 
     {% if jekyll.environment == 'production' and site.comments.provider and page.comments %}
       {% include comments.html %}
     {% endif %}
+		<script src="https://utteranc.es/client.js"
+			repo="solly29/blog-comments"
+			issue-term="pathname"
+			theme="github-light"
+			crossorigin="anonymous"
+			async>
+		</script>
   </article>
   
 

@@ -30,7 +30,7 @@ masthead_title           : # overrides the website title displayed in the masthe
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
-  provider               : # 블로그 댓글 기능 false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
+  provider               : "utterances" # 블로그 댓글 기능 false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
   disqus:
     shortname            : # 블로그 댓글 기능 https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
@@ -41,10 +41,10 @@ comments:
     num_posts            : # 5 (default)
     colorscheme          : # "light" (default), "dark"
   utterances:
-    theme                : # "github-light" (default), "github-dark"
-    issue_term           : # "pathname" (default)
+    theme                : "github-light" # "github-light" (default), "github-dark"
+    issue_term           : "pathname" # "pathname" (default)
 staticman:
-  allowedFields          : # ['name', 'email', 'url', 'message']
+  allowedFields          : # ['name', 'email', 'uenrl', 'message']
   branch                 : # "master"
   commitMessage          : # "New comment by {fields.name}"
   filename               : # comment-{@timestamp}
@@ -290,7 +290,7 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: # 블로그 댓글 기능 true
+      comments: true # 블로그 댓글 기능 true
       share: true
       related: true
       

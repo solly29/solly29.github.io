@@ -6,7 +6,7 @@ toc: true
 toc_sticky: true
 
 categories:
-  - github blog 만들기
+  - "github blog 만들기"
 tags:
   - Blog
 last_modified_at: 2020-01-31T12:59:00-50:00

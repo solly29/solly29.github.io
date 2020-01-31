@@ -1,4 +1,3 @@
-
 ---
 title:  "깃허브 블로그 생성 자료"
 excerpt: "내가 블로그 만들때 참고함"
@@ -6,7 +5,7 @@ toc: true
 toc_sticky: true
 
 categories:
-  - "github blog 만들기"
+  - github blog 만들기
 tags:
   - Blog
 last_modified_at: 2020-01-31T12:59:00-50:00

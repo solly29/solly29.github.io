@@ -91,23 +91,23 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
 ## viewPager
 뷰페이저는 여러 프래그먼트들을 좌우로 슬라이드하는 뷰이다. 여기엔 세 가지 개념이 있다.  
-*데이터 : 프래그먼트(화면)  
-*어댑터 : 프래그먼트를 어느 화면에 표시할 것인지 관리하는 객체  
-*뷰 : 뷰페이저는  
+* 데이터 : 프래그먼트(화면)  
+* 어댑터 : 프래그먼트를 어느 화면에 표시할 것인지 관리하는 객체  
+* 뷰 : 뷰페이저는  
 
 
 ## PagerAdapter
 ViewPager에 표시할 내용을 정의하려면 어댑터가 필요하다.  
 어댑터는 아이템의 목록 정보를 가진 객체이다. 종류로는  
-*FragmentPagerAdapter : 페이지 내용이 영구적이고 페이지 갯수가 많지 않을때 적합하다.  
-*FragmentStatePagerAdapter : 많은 수의 페이지가 있을때 적합하고, 적은 메모리를 차지한다.  
+* FragmentPagerAdapter : 페이지 내용이 영구적이고 페이지 갯수가 많지 않을때 적합하다.  
+* FragmentStatePagerAdapter : 많은 수의 페이지가 있을때 적합하고, 적은 메모리를 차지한다.  
 
 
 ## Glide 라이브러리
 [Glide](https://github.com/bumptech/glide)는 사진 로딩에 특화된 라이브러리이다.  
 기존 이미지 표시하는 메서드 setImageURI()보다 이 라이브러리를 쓴 이유는  
-*미사용 리소스를 자동으로 해제  
-*메모리를 효율적으로 관리해준다.  
-*이미지를 비동기로 로딩하여 UI의 끊김이 없다.  
+* 미사용 리소스를 자동으로 해제  
+* 메모리를 효율적으로 관리해준다.  
+* 이미지를 비동기로 로딩하여 UI의 끊김이 없다.  
   
 나머지 자세한 소스코드는 [여기](https://github.com/solly29/AndroidStudy/tree/master/MyGallery)에서 확인가능하다.

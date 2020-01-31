@@ -12,9 +12,9 @@ $doc-font-size: 16 !default;
 $paragraph-indent: false !default; // true, false (default)
 $indent-var: 1.3em !default;
 
-/* system typefaces */
+/* system typefaces  sans-serif의 세번째 겂을 나눔 고딕으로 적용했다*/
 $serif: Georgia, Times, serif !default;
-$sans-serif: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
+$sans-serif: -apple-system, BlinkMacSystemFont, "Nanum Gothic", "Segoe UI",
   "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
 $monospace: Monaco, Consolas, "Lucida Console", monospace !default;
 

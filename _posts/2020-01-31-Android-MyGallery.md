@@ -10,9 +10,10 @@ tags:
   - Anko
   - Glide
   - kotlin
-last_modified_at: 2020-01-31T20:30:00-20:00
+last_modified_at: 2020-01-31T20:30:00+09:00
 ---
 
+이 게시글은 안드로이드를 공부하면서 생소한 것들을 정리해두었다.
 ## 프로바이더
 
 ```kotlin
@@ -25,7 +26,7 @@ val cursor = contentResolver.query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
 ```
 위의 코드로 안드로이드의 외부 저장소에 저장된 이미지 데이터를 가지고 온다
 
-하지만 안드로이드에선 외부 저장소를 읽기 위해선 파일 권한이 핑요하다.
+하지만 안드로이드에선 외부 저장소를 읽기 위해선 파일 권한이 필요하다.
 ```
 <!--외부 저장소 읽기 권한 추가-->
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />

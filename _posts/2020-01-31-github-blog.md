@@ -5,10 +5,10 @@ toc: true
 toc_sticky: true
 
 categories:
-  - github blog 만들기
+  - Blog
 tags:
   - Blog
-last_modified_at: 2020-01-31T12:59:00-50:00
+last_modified_at: 2020-01-31T12:59:00+09:00
 ---
 
 ## 내가 블로그 만들때 참고한 사이트들을 정리해야징  

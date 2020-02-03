@@ -10,7 +10,7 @@ categories:
 tags:
   - Anko
   - Glide
-  - kotlin
+  - Kotlin
 ---
 
 이 게시글은 안드로이드를 공부하면서 생소한 것들을 정리해두었다.

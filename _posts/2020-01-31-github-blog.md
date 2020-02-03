@@ -8,7 +8,7 @@ categories:
   - Blog
 tags:
   - Blog
-last_modified_at: 2020-01-31T12:59:00+09:00
+date: 2020-01-31T12:59:00+09:00
 ---
 
 ## 내가 블로그 만들때 참고한 사이트들을 정리해야징  

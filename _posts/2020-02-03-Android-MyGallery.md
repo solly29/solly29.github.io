@@ -3,6 +3,7 @@ title:  "[Android] 프로바이더, 프래그먼트"
 excerpt: "프로바이더, 프래그먼트"
 toc: true
 toc_sticky: true
+date: 2020-02-03T13:30:00+09:00
 
 categories:
   - Android
@@ -10,7 +11,6 @@ tags:
   - Anko
   - Glide
   - kotlin
-last_modified_at: 2020-02-03T13:04:00+09:00
 ---
 
 이 게시글은 안드로이드를 공부하면서 생소한 것들을 정리해두었다.

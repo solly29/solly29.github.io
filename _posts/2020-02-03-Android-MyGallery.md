@@ -15,7 +15,7 @@ tags:
 
 이 게시글은 안드로이드를 공부하면서 생소한 것들을 정리해두었다.
 ## 프로바이더
-
+프로바이더는 앱이 가지고 있는 데이터베이스를 외부에 공개하는 기능을 제공합니다.
 ```kotlin
 //모든 사진 정보 가져오기
 val cursor = contentResolver.query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,//이미지를 가져올 경로(외부 저장소)

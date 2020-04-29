@@ -1,5 +1,5 @@
 ---
-title:  "[미완][Android] 서비스 정리"
+title:  "[Android] 서비스 정리"
 excerpt: "서비스란?"
 toc: true
 toc_sticky: true

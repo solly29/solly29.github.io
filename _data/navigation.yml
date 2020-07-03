@@ -6,8 +6,8 @@ main:
     url: https://solly29.github.io/
   - title: "홈"
     url: "/splash-page/"
-  - title: "윤동주"
-    url: "/categories/윤동주/"
+  - title: "포트폴리오"
+    url: "/portfolio/"
   - title: "About"
     url: "/about/"
   - title: "Categories"

@@ -1,10 +1,10 @@
 ---
-title:  "[미완][Android] 서비스 정리"
+title:  "[Android] 서비스 정리"
 excerpt: "서비스란?"
 toc: true
 toc_sticky: true
 date: 2020-02-05T22:00:00+09:00
-published : false
+published : true
 
 categories:
   - Android

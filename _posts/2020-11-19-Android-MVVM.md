@@ -85,4 +85,6 @@ MVVM은 Model-View-ViewModel의 약자이다. 하나씩 보도록 하자.
 2. ViewModel - View와 Model을 연결한다고 생각하면된다. Model에서 데이터를 가져와 저장하고 View에서는 ViewModel의 데이터를 가져와 사용한다. Observer 패턴으로 View는 ViewModel을 관찰하고 있다가 데이터가 변경되면 UI를 갱신한다. 이때 보통 LiveData를 사용한다.
 3. Model - Model은 Local 또는 Remote에서 데이터를 가지고온다. 여기서 비즈니스 로직을 수행하고 내부 디비(Room, Realm, SQLite 등)에 접근을 하거나 외부 서버에 통신(Retrofit, HttpUrlConnection 등)을 한다. Model에서는 UseCase, Repository 패턴 등이 있지만 이 부분은 추후에 정리할 예정이다.
 
-![MVVM - https://docs.microsoft.com/en-us/xamarin/xamarin-forms/enterprise-application-patterns/mvvm](https://solly29.github.io/assets/images/mvvmImage.png "MVVM 구조"){: .align-center}
+![MVVM - https://docs.microsoft.com/en-us/xamarin/xamarin-forms/enterprise-application-patterns/mvvm](/assets/images/mvvmImage.png "MVVM 구조"){: .align-center} 
+(https://docs.microsoft.com/en-us/xamarin/xamarin-forms/enterprise-application-patterns/mvvm)
+MVVM 구조에서는 View는 ViewModel을 알지만 반대로 ViewModel은 View를 몰라야한다. 그래서 View가 ViewModel을 관찰하면서 UI를 갱신한다.

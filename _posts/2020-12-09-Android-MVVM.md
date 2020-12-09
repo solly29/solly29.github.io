@@ -3,7 +3,7 @@ title:  "[Android] MVVM 패턴이란?"
 excerpt: "MVVM 패턴"
 toc: true
 toc_sticky: true
-date: 2020-11-19T23:00:00+09:00
+date: 2020-12-09T23:00:00+09:00
 published : true
 
 categories:
@@ -21,16 +21,15 @@ tags:
 
 본 게시글에서는 **MVVM** 패턴에 대해서 알아보자.
 
-## 자주 사용하는 기술
+# 자주 사용하는 기술
 
 MVVM에 대해서 알아보기 전에 먼저 디자인 패턴에서 자주 쓰이는 기술 부터 한번 보자.
 참고로 이 기술들을 쓰지 않아도 디자인 패턴을 구현 하는데는 아무 문제가 없다.  
 이 기술들은 디자인 패턴을 보다 편하고 효율적으로 구현하기 위한 기술들이다.
 
-디자인 패턴에서는 **LiveData, DataBinding<!--, ViewModel, Android DI(Koin, Dagger2)-->**을 자주 사용한다.
-하나씩 간단하게 알아보도록 하자
+디자인 패턴에서는 **LiveData, DataBinding, ViewModel, Android DI(Koin, Dagger2)**을 자주 사용한다. 하나씩 간단하게 알아보도록 하자
 
-### LiveData
+## LiveData
 **LiveData는 안드로이드의 LifeCycle을 가지고있는 Data Type이다.**  LifeCycle을 가지고 있어서 LifeCycle 안에서만 동작을 한다. 그리고 Observer 객체를 사용해서 LiveData안에 Data가 변경되면 Observer 객체로 값을 업데이트할 수 있다. 업데이트는 LifeCycle이 활성상태일때만 데이터를 업데이트가 되지만 LiveData의 값은 변경이된다. 이럴경우 LifeCycle이 다시 활성상태가 되면 Observer 객체로 업데이트가 된다.
 ```kotlin
 // String의 값을 가지는 LiveData이다.
@@ -43,9 +42,8 @@ liveData.observe(LifeCycleOwner, Observer{
 ```
 LiveData는 값이 변경되면 자동으로 값을 갱신해 주기 때문에 개발자가 직접 관리하지 않아도 되고, 이어서 나오는 DataBinding과 함께 쓰게되면 손쉽게 뷰의 값을 갱신할 수 있다.
 
-### DataBinding
+## DataBinding
 **DataBinding은 쉽게 말해서 xml에서 데이터를 바인딩해 사용할 수 있다.** 보통 view에 데이터를 넣을때는 java또는 kt파일에서 하는데, 이러한 작업들과 불필요한 코드들을 줄일 수 있다. 그래서 소스코드에 있는 데이터를 xml에서 바로 사용 가능하기 때문에 LiveData와 함께 쓰인다. LiveData와 함께 쓰게되면 Observer를 사용할 필요가 없고 Data가 변경시 바로 xml에 반영된다.
-  
   
 + 추가로 BindingAdapter를 사용하면 뷰에 관련된 코드(리사이클러뷰, Glide, View 관련 로직 등)를 액티비티, 프래그먼트에서 분리 할 수 있다.
 
@@ -71,13 +69,47 @@ DataBinding을 사용하려면 xml에서 ```<layout>, <data>, <variable>``` 태�
 ex) java.lang.String, java.lang.Integer, com.example.test.TestData
   
 이렇게 DataBinding을 사용하기 위한 세팅을 했으면 view에 데이터를 넣어야된다. 데이터를 view에 넣으려면 **"@{변수}"**를 사용하면 data를 view에 넣을 수 있다. 하지만 editText의 경우 값을 표시하면서 값을 변경했을때 바로 소스에 반영이 되야하는 경우가 있다. 이럴때는 **"@={변수}"**를 사용하면 editText에서 입력되는 데이터가 변경될 때 마다 소스코드에 데이터가 바로 변경된다.
-<!--### ViewModel
-이건 나중에 공부하고 하기로-->
-<!--### Android DI --> 
-  
+
+## ViewModel
+
+MVVM을 공부를 할때 블로그를 전전하며 공부를 했다. 블로그를 돌아다녀 보면 MVVM의 VM과 AAC(Android Architecture Component)의 ViewModel이 같다 라는 곳이 있고 다르다 라는 곳이 있다(보통은 다들 다르다고함). 결론은 VM과 ViewModel은 다르다. MVVM의 VM은 밑에서 이야기 하겠지만 View와 Model을 연결시켜 주고, Model에서 데이터를 가져와 저장하는 곳이다. 이때 액티비티는 LifeCycle이라는 것이 있고 액티비티가 완전히 종료될때까지 데이터를 저장해야 할때가 있다. 이때 ViewModel을 사용한다. ViewModel은 데이터 관리를 안전하게 할 수 있고 VM을 좀 더 쉽게 구현 할 수 있게 하는 기술이다.
+
+![MVVM - https://docs.microsoft.com/en-us/xamarin/xamarin-forms/enterprise-application-patterns/mvvm](/assets/images/viewmodel_lifecycle.png "ViewModel 생명주기"){: .align-center} 
+
+위 사진에서 보시다시피 ViewModel은 액티비티의 LifeCycle안에서 finished가 되기전까지 살아있다. 이 덕분에 ViewModel이 안전하게 데이터를 관리 할 수 있다. 위 사진을 예로 들어보자면 어플은 가로, 세로화면을 지원하고 자동회전 기능이 켜져있으면 화면이 회전하게된다. 이때 액티비티는 화면을 그냥 회전 시키는 것이 아니라 아예 액티비티를 새로 그려주게된다. 이때 VM에 있는 데이터들이 저장이 되어야 되는데 ViewModel을 사용하면 데이터를 안전하게 지킬 수 있다.
+
+## Android DI
+
+여기에선 먼저 DI라는 것이 무엇인지 부터 보고 가자. **DI**는 **Dependency Injection**의 약자이고 **의존성 주입**이라고 한다. 의존성 주입을 코드로 간단하게 이해해보자.
+
+```kotlin
+class B(){
+  val a = "test"
+}
+
+class A(val b: B){
+  fun print() = println(b.a)
+}
+
+fun main(){
+  val b = B()
+  val a = A(b)
+  a.print()
+}
+```
+
+위 코드를 보면 A, B 클래스가 있고 A 클래스는 B 클래스에 의존성을 가지고 있고, main() 함수에서 B 객체를 생성해 A 객체를 생성할때 B 객체를 넘겨서(주입)해서 객체를 생성하고 있다. 이렇게 A클래스에서 B 객체를 직접 생성하지 않고 외부에서 **주입**해주는 것이 **의존성 주입(DI)**이다.
+
+안드로이드에서는 의존성 주입을 도와주는 라이브러리가 있다. 대표적으로 **Dagger2, Koin** 가 있다. 여기서는 Koin에 대해서 알아보도록 하자. **Koin**은 순수 코틀린으로 개발이 되었고 Kotiln 환경에 쉽게 적용할 수 있고 어렵지 않아 쉽게 익힐 수 있다. 코드를 보며 이해를 하도록 하자.
+
+```kotlin
+class TestViewModel(): ViewModel(){}
+class TestRepository(){}
+```
+
 위의 기술들은 추후에 자세하게 정리할 예정이다.
 
-## MVVM
+# MVVM
 안드로이드 디자인 패턴에 자주 쓰이는 기술들을 알아보았으니 MVVM에 대해서 알아보도록 하자.  
   
 MVVM은 Model-View-ViewModel의 약자이다. 하나씩 보도록 하자.  
@@ -86,5 +118,9 @@ MVVM은 Model-View-ViewModel의 약자이다. 하나씩 보도록 하자.
 3. Model - Model은 Local 또는 Remote에서 데이터를 가지고온다. 여기서 비즈니스 로직을 수행하고 내부 디비(Room, Realm, SQLite 등)에 접근을 하거나 외부 서버에 통신(Retrofit, HttpUrlConnection 등)을 한다. Model에서는 UseCase, Repository 패턴 등이 있지만 이 부분은 추후에 정리할 예정이다.
 
 ![MVVM - https://docs.microsoft.com/en-us/xamarin/xamarin-forms/enterprise-application-patterns/mvvm](/assets/images/mvvmImage.png "MVVM 구조"){: .align-center} 
-(https://docs.microsoft.com/en-us/xamarin/xamarin-forms/enterprise-application-patterns/mvvm)
-MVVM 구조에서는 View는 ViewModel을 알지만 반대로 ViewModel은 View를 몰라야한다. 그래서 View가 ViewModel을 관찰하면서 UI를 갱신한다.
+
+MVVM 구조에서는 View는 ViewModel을 알지만 반대로 ViewModel은 View를 몰라야한다. 그래서 View가 ViewModel을 관찰하면서 UI를 갱신을  하게된다.
+
+MVVM을 공부하면서 계속 MVP와 비슷하다는 생각이 들었다. 왜냐하면 MVP도 Presenter와 View가 Contract 인터페이스를 두고 1:1로 매칭이 되어있다. MVVM은 인터페이스는 없지만 View와 ViewModel이 1:1로 매칭이 되어 있는 형태를 가지고있어서 비슷하다는 생각이 들었다.
+
+MVVM의 이론적인 부분은 여기까지하고 코드를 보며 이해를 해보자.

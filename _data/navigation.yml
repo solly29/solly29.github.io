@@ -2,10 +2,12 @@
 main:
   # - title: "Quick-Start Guide"
   #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-  - title: "블로그 방문하기"
-    url: https://solly29.github.io/
-  - title: "홈"
-    url: "/splash-page/"
+  # - title: "블로그 방문하기"
+  #   url: https://solly29.github.io/
+  - title: "최신글"
+    url: "/post-archive/"
+  - title: "포스팅"
+    url: "/year-archive/"
   - title: "포트폴리오"
     url: "/portfolio/"
   - title: "About"

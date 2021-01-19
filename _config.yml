@@ -109,7 +109,7 @@ analytics:
 author:
   name             : "Solly29"
   avatar           : "/assets/images/cat.jpg" # 프로필 이미지
-  bio              : "솔리의 첫 블로그"
+  bio              : "개발자 블로그"
   location         : "South Korea"
   email            :
   links:
@@ -279,6 +279,12 @@ compress_html:
   ignore:
     envs: development
 
+# Collections
+collections:
+  portfolio:
+    output: true
+    permalink: /:collection/:path/
+
 
 # Defaults
 defaults:
@@ -305,3 +311,12 @@ defaults:
       comments: false
       share: true
       related: false
+
+  # _portfolio
+  - scope:
+      path: ""
+      type: portfolio
+    values:
+      layout: single
+      author_profile: false
+      share: true

@@ -25,7 +25,7 @@ url                      : "https://solly29.github.io/"
 baseurl                  : # 서브 경로가 있으면 기재
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : "/assets/images/noImage.png" # 밑에 글 티저 이미지
-logo                     : # 최상단 메뉴 바에 사이트 로고 넣기
+logo                     : "/assets/images/favicon/faviconIcon.ico" # 최상단 메뉴 바에 사이트 로고 넣기
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -89,7 +89,7 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 : "/assets/images/cat.jpg" #블로그 글이 링크될때 기본으로 적용될 이미지를 지정한다
+og_image                 : "/assets/images/og_image.png" #블로그 글이 링크될때 기본으로 적용될 이미지를 지정한다
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:

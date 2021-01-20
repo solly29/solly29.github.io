@@ -1,5 +1,5 @@
 ---
-title:  "깃허브 블로그 생성 자료"
+title:  "[Blog] 깃허브 블로그 생성 자료"
 excerpt: "내가 블로그 만들때 참고함"
 toc: true
 toc_sticky: true

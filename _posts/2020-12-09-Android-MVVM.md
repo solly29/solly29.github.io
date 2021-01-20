@@ -3,7 +3,7 @@ title:  "[Android] MVVM 패턴이란?"
 excerpt: "MVVM 패턴"
 toc: true
 toc_sticky: true
-date: 2020-12-09T23:00:00+09:00
+date: 2021-01-20T23:00:00+09:00
 published : true
 
 categories:
@@ -12,6 +12,7 @@ categories:
 tags:
   - Android
   - MVVM
+  - Kotlin
 ---
 
 안드로이드에서 자주 쓰이는 디자인 패턴에 대해서 이야기 하는 시간을 가져보자.
@@ -103,9 +104,38 @@ fun main(){
 안드로이드에서는 의존성 주입을 도와주는 라이브러리가 있다. 대표적으로 **Dagger2, Koin** 가 있다. 여기서는 Koin에 대해서 알아보도록 하자. **Koin**은 순수 코틀린으로 개발이 되었고 Kotiln 환경에 쉽게 적용할 수 있고 어렵지 않아 쉽게 익힐 수 있다. 코드를 보며 이해를 하도록 하자.
 
 ```kotlin
-class TestViewModel(): ViewModel(){}
-class TestRepository(){}
+class TestViewModel(repository: TestRepository): ViewModel(){}
+class TestRepository(service: TestService){}
+interface TestService {}
 ```
+이렇게 클래스들이 있다고 가정하자. 이 클래스들에 의존성을 주입하기 위한 Module을 만들어 보자.
+
+```kotlin
+val testModule = module {
+  viewModel { TestViewModel(get()) }
+  single { TestRepository(get()) }
+  single { TestService() }
+  factory { TestClass() }
+}
+```
+module안에는 viewModel, single 등등 있는데 하나씩 보면
+- `viewModel{}`은 AAC의 ViewModel을 위한 것이고, viewModel 인스턴스를 생성해준다.
+- `single{}`은 싱글톤 타입으로 지정한다.
+- `factory{}`는 매번 새로운 인스턴스를 생성한다.
+- `get()`은 module들 안에서 필요한 컴포넌트를 찾아서 의존성을 주입해준다.
+
+module들을 사용하려면 Koin 초기화를 해야된다.
+
+```kotlin
+startKoin {
+  // 먼저 안드로이드의 Context를 설정한다.
+  androidContext(Context)
+
+  // 만들어둔 Module들을 가져온다. 리스트 혹은 vararg 이다.
+  modules(testModule)
+}
+```
+보통 위의 코드는 `Application` 파일에 `onCreate()` 안에 작성한다. 앱을 실행하고 가장 먼저 실행이되도록 하게한다.
 
 위의 기술들은 추후에 자세하게 정리할 예정이다.
 
